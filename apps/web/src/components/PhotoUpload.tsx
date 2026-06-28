@@ -64,13 +64,13 @@ export function PhotoUpload({ photos, onChange }: PhotoUploadProps) {
       />
       {error && <p className="text-sm text-red-600">{error}</p>}
       {photos.length > 0 && (
-        <div className="flex flex-wrap gap-2">
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
           {photos.map((url) => (
             <img
               key={url}
               src={url}
               alt="Preview"
-              className="h-16 w-16 rounded-lg object-cover border border-stone-200"
+              className="w-full aspect-square rounded-xl object-cover border border-stone-200"
             />
           ))}
         </div>

@@ -154,16 +154,18 @@ export function ReviewPage() {
           <StarRating value={review.meta.rating} />
         </div>
 
-        <p className="mt-5 whitespace-pre-wrap text-stone-800">{review.text}</p>
+        <p className="mt-5 whitespace-pre-wrap text-stone-800">
+          {review.text.replace(/!\[.*?\]\(.*?\)\n?/g, '').trim()}
+        </p>
 
         {review.meta.photos && review.meta.photos.length > 0 && (
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3">
             {review.meta.photos.map((url) => (
               <a key={url} href={url} target="_blank" rel="noreferrer">
                 <img
                   src={url}
                   alt="Review photo"
-                  className="h-32 w-32 rounded-xl object-cover border border-stone-200"
+                  className="w-full rounded-xl object-cover border border-stone-200 aspect-square"
                 />
               </a>
             ))}

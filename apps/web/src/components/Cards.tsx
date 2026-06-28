@@ -72,7 +72,9 @@ export function ReviewCard({ review }: { review: Review }) {
         </div>
         <StarRating value={review.meta.rating} size="sm" />
       </div>
-      <p className="mt-3 line-clamp-3 text-sm text-stone-700">{review.text}</p>
+      <p className="mt-3 line-clamp-3 text-sm text-stone-700">
+        {review.text.replace(/!\[.*?\]\(.*?\)\n?/g, '').trim()}
+      </p>
     </Link>
   );
 }
