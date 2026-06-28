@@ -1,9 +1,10 @@
 import { graphql } from '@octokit/graphql';
 
 export const githubOwner = import.meta.env.VITE_GITHUB_OWNER || 'your-username';
-export const githubRepo = import.meta.env.VITE_GITHUB_REPO || 'openrate';
+export const githubRepo = import.meta.env.VITE_GITHUB_REPO || 'ratemate';
 export const apiUrl = import.meta.env.VITE_API_URL || '';
 export const turnstileSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY || '';
+const githubToken = import.meta.env.VITE_GITHUB_TOKEN || '';
 
 export const githubDiscussionsUrl = `https://github.com/${githubOwner}/${githubRepo}/discussions`;
 
@@ -13,7 +14,7 @@ export function getApiUrl(path: string): string {
 }
 
 export const gql = graphql.defaults({
-  headers: {},
+  headers: githubToken ? { authorization: `token ${githubToken}` } : {},
 });
 
 export function gqlWithToken(token: string) {

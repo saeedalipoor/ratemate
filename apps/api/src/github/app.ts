@@ -35,6 +35,7 @@ async function getInstallationId(
         authorization: `Bearer ${appAuth.token}`,
         accept: 'application/vnd.github+json',
         'x-github-api-version': '2022-11-28',
+        'user-agent': 'ratemate-app',
       },
     },
   );

@@ -49,6 +49,7 @@ uploads.post('/', async (c) => {
           authorization: `Bearer ${appAuth.token}`,
           accept: 'application/vnd.github+json',
           'x-github-api-version': '2022-11-28',
+          'user-agent': 'ratemate-app',
         },
       },
     );
@@ -71,6 +72,7 @@ uploads.post('/', async (c) => {
           accept: 'application/vnd.github+json',
           'content-type': 'application/json',
           'x-github-api-version': '2022-11-28',
+          'user-agent': 'ratemate-app',
         },
         body: JSON.stringify({
           message: commitMessage,

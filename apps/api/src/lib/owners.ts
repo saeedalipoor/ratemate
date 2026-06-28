@@ -15,6 +15,7 @@ export async function fetchOwnersConfig(env: Env): Promise<OwnersConfig> {
       headers: {
         accept: 'application/vnd.github.raw',
         'x-github-api-version': '2022-11-28',
+        'user-agent': 'ratemate-app',
       },
     },
   );
