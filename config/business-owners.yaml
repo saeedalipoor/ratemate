@@ -1,5 +1,13 @@
 # Business owners verified via PR. Keys are business slugs from Businesses discussions.
-# Example:
-# acme-coffee:
-#   owners: [github-username]
-#   verified_at: 2026-06-28
+
+brew-and-bean:
+  owners: [saeedalipoor]
+  verified_at: 2026-06-28
+
+pixel-workshop:
+  owners: [saeedalipoor]
+  verified_at: 2026-06-28
+
+freshmart-grocery:
+  owners: [saeedalipoor]
+  verified_at: 2026-06-28
