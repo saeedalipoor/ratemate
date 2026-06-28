@@ -157,11 +157,17 @@ export function ReviewPage() {
         <p className="mt-5 whitespace-pre-wrap text-stone-800">{review.text}</p>
 
         {review.meta.photos && review.meta.photos.length > 0 && (
-          <ul className="mt-4 flex flex-wrap gap-2 text-sm text-stone-500">
-            {review.meta.photos.map((photo) => (
-              <li key={photo}>{photo}</li>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {review.meta.photos.map((url) => (
+              <a key={url} href={url} target="_blank" rel="noreferrer">
+                <img
+                  src={url}
+                  alt="Review photo"
+                  className="h-32 w-32 rounded-xl object-cover border border-stone-200"
+                />
+              </a>
             ))}
-          </ul>
+          </div>
         )}
 
         <a

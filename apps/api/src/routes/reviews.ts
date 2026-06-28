@@ -108,6 +108,7 @@ reviews.post('/anonymous', async (c) => {
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Failed to create review';
+    console.error('[reviews/anonymous] error:', message, error);
     return c.json({ error: message }, 500);
   }
 });

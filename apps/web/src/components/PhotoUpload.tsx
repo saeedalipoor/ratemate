@@ -26,11 +26,11 @@ export function PhotoUpload({ photos, onChange }: PhotoUploadProps) {
           credentials: 'include',
           body: form,
         });
-        const data = (await response.json()) as { path?: string; error?: string };
-        if (!response.ok || !data.path) {
+        const data = (await response.json()) as { url?: string; error?: string };
+        if (!response.ok || !data.url) {
           throw new Error(data.error ?? 'Upload failed');
         }
-        uploaded.push(data.path);
+        uploaded.push(data.url);
       }
       onChange([...photos, ...uploaded]);
     } catch (uploadError) {
@@ -64,13 +64,16 @@ export function PhotoUpload({ photos, onChange }: PhotoUploadProps) {
       />
       {error && <p className="text-sm text-red-600">{error}</p>}
       {photos.length > 0 && (
-        <ul className="flex flex-wrap gap-2 text-xs text-stone-600">
-          {photos.map((photo) => (
-            <li key={photo} className="rounded bg-stone-100 px-2 py-1">
-              {photo.split('/').pop()}
-            </li>
+        <div className="flex flex-wrap gap-2">
+          {photos.map((url) => (
+            <img
+              key={url}
+              src={url}
+              alt="Preview"
+              className="h-16 w-16 rounded-lg object-cover border border-stone-200"
+            />
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );

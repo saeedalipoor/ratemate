@@ -30,6 +30,12 @@ export function buildReviewBody(input: {
   photos?: string[];
   text: string;
 }): string {
+  const photoUrls = input.photos ?? [];
+  const photoMarkdown =
+    photoUrls.length > 0
+      ? '\n\n' + photoUrls.map((url) => `![photo](${url})`).join('\n')
+      : '';
+
   return buildFrontmatter(
     {
       type: 'review',
@@ -39,9 +45,9 @@ export function buildReviewBody(input: {
         mode: input.reviewer.mode,
         github_login: input.reviewer.github_login ?? null,
       },
-      photos: input.photos ?? [],
+      photos: photoUrls,
     },
-    input.text,
+    input.text + photoMarkdown,
   );
 }
 
