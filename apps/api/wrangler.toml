@@ -1,0 +1,16 @@
+name = "ratemate-api"
+main = "src/index.ts"
+compatibility_date = "2025-06-28"
+
+[vars]
+GITHUB_OWNER = "saeedalipoor"
+GITHUB_REPO = "ratemate"
+FRONTEND_URL = "http://localhost:5173"
+
+# Uncomment and configure for production:
+# [[kv_namespaces]]
+# binding = "RATE_LIMIT"
+# id = "your-kv-namespace-id"
+
+[dev]
+port = 8787

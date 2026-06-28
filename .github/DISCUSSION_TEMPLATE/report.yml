@@ -1,0 +1,34 @@
+---
+title: "Report: review #"
+labels: ["report"]
+body:
+  - type: input
+    id: review_url
+    attributes:
+      label: Review URL
+      placeholder: https://github.com/owner/repo/discussions/123
+    validations:
+      required: true
+  - type: input
+    id: review_number
+    attributes:
+      label: Review discussion number
+    validations:
+      required: true
+  - type: dropdown
+    id: reason
+    attributes:
+      label: Reason
+      options:
+        - spam
+        - harassment
+        - fake
+        - off-topic
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Additional context for moderators.

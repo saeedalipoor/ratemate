@@ -1,0 +1,7 @@
+# Local development secrets (copy to .dev.vars and fill in values from docs/SETUP.md)
+GITHUB_APP_ID=
+GITHUB_APP_PRIVATE_KEY=
+GITHUB_OAUTH_CLIENT_ID=
+GITHUB_OAUTH_CLIENT_SECRET=
+OAUTH_COOKIE_SECRET=dev-secret-change-me
+TURNSTILE_SECRET=

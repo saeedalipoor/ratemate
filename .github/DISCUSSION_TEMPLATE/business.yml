@@ -1,0 +1,26 @@
+---
+title: "Business: "
+labels: ["business"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Add a new business to OpenRate. After submitting, it will appear in the Businesses category.
+        Use the frontmatter fields below in the discussion body.
+  - type: textarea
+    id: body
+    attributes:
+      label: Business details
+      description: Edit the YAML frontmatter and description.
+      value: |
+        ---
+        type: business
+        slug: my-business
+        category: food-drink
+        location: "City, Country"
+        website: https://example.com
+        ---
+
+        Describe the business here.
+    validations:
+      required: true

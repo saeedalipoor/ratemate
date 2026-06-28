@@ -1,0 +1,5 @@
+# Business owners verified via PR. Keys are business slugs from Businesses discussions.
+# Example:
+# acme-coffee:
+#   owners: [github-username]
+#   verified_at: 2026-06-28

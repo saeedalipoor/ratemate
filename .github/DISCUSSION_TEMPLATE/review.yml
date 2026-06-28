@@ -1,0 +1,26 @@
+---
+title: "Review: "
+labels: ["review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit a review directly on GitHub. Set `reviewer.mode` to `github-public` and your username to show your identity.
+  - type: textarea
+    id: body
+    attributes:
+      label: Review
+      value: |
+        ---
+        type: review
+        business: business-slug
+        rating: 5
+        reviewer:
+          mode: github-public
+          github_login: YOUR_GITHUB_USERNAME
+        photos: []
+        ---
+
+        Write your review here.
+    validations:
+      required: true
